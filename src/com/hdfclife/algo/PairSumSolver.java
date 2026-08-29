@@ -21,9 +21,7 @@ public class PairSumSolver {
             }
         }
 
-        throw new PairNotFoundException(
-                "No pair found for target " + target
-        );
+        throw new PairNotFoundException("No pair found for target " + target);
     }
 
     public static String twoPointer(int[] arr, int target) {
@@ -49,8 +47,6 @@ public class PairSumSolver {
             }
         }
 
-        throw new PairNotFoundException(
-                "No pair found for target " + target
-        );
+        throw new PairNotFoundException("No pair found for target " + target);
     }
 }

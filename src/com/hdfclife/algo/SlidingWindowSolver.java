@@ -7,9 +7,7 @@ public class SlidingWindowSolver {
     public static int maxSum(int[] arr, int k) {
 
         if (k <= 0 || k > arr.length) {
-            throw new InvalidWindowException(
-                    "Invalid window size: " + k
-            );
+            throw new InvalidWindowException("Invalid window size: " + k);
         }
 
         int windowSum = 0;

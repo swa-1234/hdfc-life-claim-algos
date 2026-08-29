@@ -27,122 +27,67 @@ public class Main {
 
         int[] seed = store.toArray();
 
-        System.out.println(
-                "Seed array → " + format(seed)
-        );
+        System.out.println("Seed array → " + format(seed));
 
         store.insert(2, 22000);
 
-        System.out.println(
-                "After insert(2, 22000) → "
-                        + format(store.toArray())
-        );
+        System.out.println("After insert(2, 22000) → " + format(store.toArray()));
 
-        System.out.println(
-                "Shift count for that insert → "
-                        + store.getLastShiftCount()
-        );
+        System.out.println("Shift count for that insert → " + store.getLastShiftCount());
 
         store.delete(2);
 
-        System.out.println(
-                "After delete(2) → "
-                        + format(store.toArray())
-        );
+        System.out.println("After delete(2) → " + format(store.toArray()));
 
         try {
 
-            String bruteForcePair =
-                    PairSumSolver.bruteForce(seed, 57000);
+            String bruteForcePair = PairSumSolver.bruteForce(seed, 57000);
 
-            System.out.println(
-                    "Brute-force pair for 57000 → "
-                            + bruteForcePair
-            );
+            System.out.println("Brute-force pair for 57000 → " + bruteForcePair);
 
         } catch (PairNotFoundException e) {
 
-            System.out.println(
-                    "Caught message for pair target 57000: "
-                            + e.getMessage()
-            );
+            System.out.println("Caught message for pair target 57000: " + e.getMessage());
         }
 
         try {
 
-            String twoPointerPair =
-                    PairSumSolver.twoPointer(seed, 57000);
+            String twoPointerPair = PairSumSolver.twoPointer(seed, 57000);
 
-            System.out.println(
-                    "Two-pointer pair for 57000 → "
-                            + twoPointerPair
-            );
+            System.out.println("Two-pointer pair for 57000 → " + twoPointerPair);
 
         } catch (PairNotFoundException e) {
 
-            System.out.println(
-                    "Caught message for pair target 57000: "
-                            + e.getMessage()
-            );
+            System.out.println("Caught message for pair target 57000: " + e.getMessage());
         }
 
-        System.out.println(
-                "Palindrome 12321 → "
-                        + PalindromeChecker.isPalindrome(12321)
-        );
+        System.out.println("Palindrome 12321 → " + PalindromeChecker.isPalindrome(12321));
 
-        System.out.println(
-                "Palindrome 18500 → "
-                        + PalindromeChecker.isPalindrome(18500)
-        );
+        System.out.println("Palindrome 18500 → " + PalindromeChecker.isPalindrome(18500));
 
-        int[] partitioned =
-                PartitionSolver.partition(seed, 20000);
+        int[] partitioned = PartitionSolver.partition(seed, 20000);
 
-        System.out.println(
-                "Partition around 20000 → "
-                        + format(partitioned)
-        );
+        System.out.println("Partition around 20000 → " + format(partitioned));
 
-        int maxSum =
-                SlidingWindowSolver.maxSum(seed, 3);
+        int maxSum = SlidingWindowSolver.maxSum(seed, 3);
 
-        System.out.println(
-                "Sliding-window max for k=3 → "
-                        + maxSum
-        );
+        System.out.println("Sliding-window max for k=3 → " + maxSum);
 
-        int longest =
-                UniqueSubstringSolver
-                        .longestUniqueSubstring("TERMULIPTERM");
+        int longest = UniqueSubstringSolver.longestUniqueSubstring("TERMULIPTERM");
 
-        System.out.println(
-                "Longest unique substring of TERMULIPTERM → "
-                        + longest
-        );
+        System.out.println("Longest unique substring of TERMULIPTERM → " + longest);
 
-        int[] sortedSeed = Arrays.copyOf(
-                seed,
-                seed.length
-        );
+        int[] sortedSeed = Arrays.copyOf(seed, seed.length);
 
         Arrays.sort(sortedSeed);
 
-        boolean found15000 =
-                BinarySearcher.search(sortedSeed, 15000);
+        boolean found15000 = BinarySearcher.search(sortedSeed, 15000);
 
-        System.out.println(
-                "Binary search 15000 → "
-                        + (found15000 ? "found" : "not found")
-        );
+        System.out.println("Binary search 15000 → " + (found15000 ? "found" : "not found"));
 
-        boolean found999 =
-                BinarySearcher.search(sortedSeed, 999);
+        boolean found999 = BinarySearcher.search(sortedSeed, 999);
 
-        System.out.println(
-                "Binary search 999 → "
-                        + (found999 ? "found" : "not found")
-        );
+        System.out.println("Binary search 999 → " + (found999 ? "found" : "not found"));
 
         try {
 
@@ -150,10 +95,7 @@ public class Main {
 
         } catch (InvalidIndexException e) {
 
-            System.out.println(
-                    "Caught message for invalid insert index 99 → "
-                            + e.getMessage()
-            );
+            System.out.println("Caught message for invalid insert index 99 → " + e.getMessage());
         }
 
         try {
@@ -162,16 +104,11 @@ public class Main {
 
         } catch (PairNotFoundException e) {
 
-            System.out.println(
-                    "Caught message for pair target 1 → "
-                            + e.getMessage()
-            );
+            System.out.println("Caught message for pair target 1 → " + e.getMessage());
         }
     }
 
     private static String format(int[] arr) {
-        return Arrays.toString(arr)
-                .replace("[", "")
-                .replace("]", "");
+        return Arrays.toString(arr).replace("[", "").replace("]", "");
     }
 }

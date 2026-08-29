@@ -29,9 +29,7 @@ public class ClaimAmountStore {
     public void insert(int index, int amount) {
 
         if (index < 0 || index > size) {
-            throw new InvalidIndexException(
-                    "Invalid index: " + index
-            );
+            throw new InvalidIndexException("Invalid index: " + index);
         }
 
         if (size == data.length) {
@@ -52,9 +50,7 @@ public class ClaimAmountStore {
     public void delete(int index) {
 
         if (index < 0 || index >= size) {
-            throw new InvalidIndexException(
-                    "Invalid index: " + index
-            );
+            throw new InvalidIndexException("Invalid index: " + index);
         }
 
         for (int i = index; i < size - 1; i++) {
